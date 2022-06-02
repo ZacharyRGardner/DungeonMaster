@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p4="http://xamarin.com/mono/android/designer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ff000000">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="@string/calc_encounter"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:gravity="top|center"
+            android:paddingBottom="50px"
+            android:paddingTop="50px"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingBottom="25px"
+            android:text="@string/select_route"
+            android:textColor="#ffffffff" />       
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner1"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:spinnerMode="dropdown"
+            android:paddingTop="50px"
+            android:background="#ffffffff" 
+         />
+        <RadioGroup
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="50px"
+            android:id="@+id/radioGroup1">
+            <RadioButton
+                android:text="@string/grass_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/radioBtnGrass"
+                android:textColor="#ffffffff"
+                android:buttonTint="#ffffffff" />
+            <RadioButton
+                android:text="@string/fishing_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/radioBtnFishing"
+                android:textColor="#ffffffff"
+                android:buttonTint="#ffffffff" />
+            <RadioButton
+                android:text="@string/surfing_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/radioBtnSurfing"
+                android:textColor="#ffffffff"
+                android:buttonTint="#ffffffff" />
+        </RadioGroup>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingBottom="25px"
+            android:paddingTop="50px"
+            android:text="@string/num_encounters"
+            android:textColor="#ffffffff" />
+        <EditText
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:textColor="#ffffffff"/>
+
+        <Button
+            android:text="@string/calc_encounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button1" />
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffffff"
+            android:id="@+id/tableLayout1">
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

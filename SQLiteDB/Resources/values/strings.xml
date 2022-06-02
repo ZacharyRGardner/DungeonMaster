@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Encounter Calculator</string>
+    <string name="action_settings">Settings</string>
+	<string name="name_hint">Enter Pokemon Name</string>
+	<string name="min_level_hint">Enter Minimum Level</string>
+	<string name="max_level_hint">Enter Maximum Level</string>
+	<string name="encounter_rate_hint">Enter Encounter Rate</string>
+	<string name="route_hint">Enter Route</string>
+	<string name="add_button_text">Add</string>
+	<string name="update_button_text">Update</string>
+	<string name="remove_button_text">Remove</string>
+	<string name="pokemon_name">Name</string>
+	<string name="min_level">Minimum Level</string>
+	<string name="max_level">Maximum Level</string>
+	<string name="encounter_rate">Encounter Rate</string>
+	<string name="route_name">Route</string>
+	<string name="location_name">Location</string>
+	<string name="campaigns_button_text">Choose a Campaign</string>
+	<string name="create_button_text">Create a Campaign</string>
+	<string name="exit_button_text">Exit</string>
+	<string name="menu_button_text">Menu</string>
+	<string name="calc_encounter">Calculate Encounter</string>
+	<string name="select_route">Choose Location</string>
+	<string name="num_encounters">How Many Encounters?</string>
+	<string name="location_hint">Enter Location</string>
+	<string name="grass_location">Grass</string>
+	<string name="fishing_location">Fishing</string>
+	<string name="surfing_location">Surfing</string>
+
+	<string-array name="routes_array">
+		<item>Boss Battle</item>
+		<item>Viridian Forest</item>
+		<item>Route 1</item>
+		<item>Route 2</item>
+		<item>Route 3</item>
+		<item>Route 4</item>
+		<item>Route 5</item>
+		<item>Route 6</item>
+		<item>Route 7</item>
+		<item>Route 8</item>
+		<item>Route 9</item>
+		<item>Route 10</item>
+		<item>Route 11</item>
+		<item>Route 12</item>
+		<item>Route 13</item>
+		<item>Route 14</item>
+		<item>Route 15</item>
+		<item>Route 16</item>
+		<item>Route 17</item>
+		<item>Route 18</item>
+		<item>Route 19</item>
+		<item>Route 20</item>
+		<item>Route 21</item>
+		<item>Route 22</item>
+		<item>Route 23</item>
+		<item>Route 24</item>
+		<item>Route 25</item>
+		<item>Cerulean Cave</item>
+		<item>Diglett\'s Cave</item>
+		<item>Mt. Moon</item>
+		<item>Pokemon Mansion</item>
+		<item>Pokemon Tower</item>
+		<item>Power Plant</item>
+		<item>Rock Tunnel</item>
+		<item>Safari Zone</item>
+		<item>Seafoam Islands</item>
+		<item>Victory Road</item>
+	</string-array>
+	<string name="poke_dungeon">Pokemon DnD</string>
+	<string name="edit_poke_dungeon">Edit</string>
+</resources>
