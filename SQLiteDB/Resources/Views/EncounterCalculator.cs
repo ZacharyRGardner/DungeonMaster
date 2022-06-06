@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using SQLiteDB.Resources.Helper;
@@ -48,7 +49,8 @@ namespace SQLiteDB.Resources.Views
             // use init method to display results
             btnCalcEncounter.Click += delegate {
                 // new QueryData object to story query input
-                List<Encounter> pokemonList = new List<Encounter>();
+                List<Pokemon> pokemonList = new List<Pokemon>();
+                List<Encounter> encounterList = new List<Encounter>();
                 QueryData query = new QueryData();
                 string queryText = "You chose ";
                 // new List<Pokemon
@@ -67,15 +69,39 @@ namespace SQLiteDB.Resources.Views
 
                 // Get Number of Encounters with textedit
                 string numEncounters = editText1.Text.ToString();
-                query.NumEncounters = int.Parse(numEncounters);
+
+                try
+                {
+                    query.NumEncounters = int.Parse(numEncounters);
+                }
+                catch(FormatException e)
+                {
+                    Log.Info("FormatException", e.Message);
+                    Toast.MakeText(this, "Incorrect input, \n Try again!", ToastLength.Long).Show();
+                    return;
+                }
                 queryText += numEncounters;
 
                 // Query DB for selected route and location
                 // Calculate Encounter and Item Drop Quality
                 pokemonList = QueryRoute(query);
 
+                // Input number of encounters and pokemon list that matches route and location
+                // All possible encounter pokemon are added to new List<Encounter>
+                if (pokemonList.Count > 0)
+                {
+                    encounterList = Encounter(query.NumEncounters, pokemonList);
+                }
+                else
+                {
+                    Toast.MakeText(this, "No results, \n Try again!", ToastLength.Long).Show();
+                    return;
+                }
+                //calculates pokemon to encounter and adds them to List<Encounter>
+                encounterList = CalcEncounter(encounterList, query.NumEncounters);
+
                 // Display Encounter List using Init method
-                Init(pokemonList);
+                Init(encounterList);
 
                 // Toast for testing data input
                 Toast.MakeText(this, queryText, ToastLength.Long).Show();
@@ -109,24 +135,15 @@ namespace SQLiteDB.Resources.Views
         //Called by Calculate Encounter Button
 
         // Query local db for encounter list
-        public List<Encounter> QueryRoute(QueryData input)
+        public List<Pokemon> QueryRoute(QueryData input)
         {
             // Pokemon List for return List
-            List<Pokemon> pokemonList = new List<Pokemon>();
-            List<Encounter> encounterList = new List<Encounter>();            
+            List<Pokemon> pokemonList = new List<Pokemon>();                        
        
             // Selects pokemon list based one route and location
-            pokemonList = db.SelectEncounter(input.Route, input.Location);
-                      
-            //sends encounterList through the encounter calculator
-            if (pokemonList.Count < input.NumEncounters)
-            {
-                return null;
-            }
-            //should return final pokemon encounter list
-            encounterList = Encounter(input.NumEncounters, pokemonList);
-
-            return encounterList;
+            pokemonList = db.SelectEncounter(input.Route, input.Location);                 
+            
+            return pokemonList;
                                   
         }
         public List<Encounter> Encounter(int numEncounters, List<Pokemon> pokemonList)
@@ -141,10 +158,7 @@ namespace SQLiteDB.Resources.Views
                     returnList.Add(new Encounter(p.Name, p.CurrentLevel, p.MinLevel, p.MaxLevel, p.EncounterRate, p.EncounterScore, p.DropQuality));
                 }
             }
-
-            // takes all possible pokemon from list and returns only encountered pokemon.
-            returnList = CalcEncounter(returnList, numEncounters);
-                     
+                   
             return returnList;
         }
         // Calculate encounter and return result list
