@@ -113,16 +113,21 @@ namespace SQLiteDB.Resources.Views
         {
             // Pokemon List for return List
             List<Pokemon> pokemonList = new List<Pokemon>();
-            List<Encounter> encounterList = new List<Encounter>();
-
+            List<Encounter> encounterList = new List<Encounter>();            
+       
             // Selects pokemon list based one route and location
             pokemonList = db.SelectEncounter(input.Route, input.Location);
-
+                      
             //sends encounterList through the encounter calculator
+            if (pokemonList.Count < input.NumEncounters)
+            {
+                return null;
+            }
             //should return final pokemon encounter list
             encounterList = Encounter(input.NumEncounters, pokemonList);
 
             return encounterList;
+                                  
         }
         public List<Encounter> Encounter(int numEncounters, List<Pokemon> pokemonList)
         {

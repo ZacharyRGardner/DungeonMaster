@@ -91,17 +91,17 @@ namespace SQLiteDB.Resources.Views
             listViewData.ItemClick += (s, e) =>
             {
                 // Set background for item
-                for (int i = 0; i < listViewData.Count; i++)
-                {
-                    if (e.Position == i)
-                    {
-                        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Black);
-                    }
-                    else
-                    {
-                        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
-                    }
-                }
+                //for (int i = 0; i < listViewData.Count; i++)
+                //{
+                //    if (e.Position == i)
+                //    {
+                //        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Black);
+                //    }
+                //    else
+                //    {
+                //        listViewData.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
+                //    }
+                //}
                 // Binding Data
                 var txtName = e.View.FindViewById<TextView>(Resource.Id.txtView_Name);
                 var txtMinLevel = e.View.FindViewById<TextView>(Resource.Id.txtView_Min_Level);
