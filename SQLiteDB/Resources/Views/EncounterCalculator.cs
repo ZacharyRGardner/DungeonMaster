@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -27,6 +28,7 @@ namespace SQLiteDB.Resources.Views
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            
             SetContentView(Resource.Layout.encounter_layout);
             initializeMultipleRadioButtons();
             db = new Database();
@@ -104,7 +106,7 @@ namespace SQLiteDB.Resources.Views
                 Init(encounterList);
 
                 // Toast for testing data input
-                Toast.MakeText(this, queryText, ToastLength.Long).Show();
+                //Toast.MakeText(this, queryText, ToastLength.Long).Show();
             };
         }
         
@@ -121,7 +123,7 @@ namespace SQLiteDB.Resources.Views
         public void initializeMultipleRadioButtons()
         {
             radioGroup1 = FindViewById<RadioGroup>(Resource.Id.radioGroup1);
-
+            radioGroup1.Check(radioGroup1.GetChildAt(0).Id);
             radioGroup1.CheckedChange += radioGroup1_CheckedChange;
         }
 
@@ -233,22 +235,25 @@ namespace SQLiteDB.Resources.Views
             TableLayout tableLayout1 = (TableLayout)FindViewById(Resource.Id.tableLayout1);
 
             tableLayout1.RemoveAllViews();
-
+            tableLayout1.SetBackgroundColor(Android.Graphics.Color.Black);
+            
             tableLayout1.StretchAllColumns = true;
             TableRow theader = new TableRow(this);
-
+            
             TextView pokeName = new TextView(this);
             pokeName.Text = "Name";
-
+            pokeName.SetTextColor(Color.Gray);
             theader.AddView(pokeName);
 
             TextView pokeLevel = new TextView(this);
             pokeLevel.Text = "Level";
+            pokeLevel.SetTextColor(Color.Gray);
             theader.AddView(pokeLevel);
 
 
             TextView pokeItem = new TextView(this);
             pokeItem.Text = "Item";
+            pokeItem.SetTextColor(Color.Gray);
             theader.AddView(pokeItem);
             tableLayout1.AddView(theader);
 
@@ -258,15 +263,18 @@ namespace SQLiteDB.Resources.Views
 
                 TextView name = new TextView(this);
                 name.Text = p.Name;
+                name.SetTextColor(Color.Gray);
                 resultRow.AddView(name);
 
                 TextView level = new TextView(this);
                 level.Text = p.CurrentLevel.ToString();
+                level.SetTextColor(Color.Gray);
                 resultRow.AddView(level);
 
 
                 TextView item = new TextView(this);
                 item.Text = p.DropQuality;
+                item.SetTextColor(Color.Gray);
                 resultRow.AddView(item);
                 tableLayout1.AddView(resultRow);
             }

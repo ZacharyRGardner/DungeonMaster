@@ -1,10 +1,12 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
+using Android.Text;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using SQLiteDB.Resources.Helper;
 using SQLiteDB.Resources.Model;
+using System;
 using System.Collections.Generic;
 
 namespace SQLiteDB.Resources.Views
@@ -41,33 +43,67 @@ namespace SQLiteDB.Resources.Views
             // Event
             btnAdd.Click += delegate
             {
-                Pokemon pokemon = new Pokemon()
+                if (ValidateInput(edtName, edtMinLevel, edtMaxLevel, edtEncounterRate, edtRoute, edtLocation))
                 {
-                    // I need to update the int value parsing.  It is getting the storage location instead of the value I think.
-                    Name = edtName.Text,
-                    MinLevel = int.Parse(edtMinLevel.Text.ToString()),
-                    MaxLevel = int.Parse(edtMaxLevel.Text.ToString()),
-                    EncounterRate = int.Parse(edtEncounterRate.Text.ToString()),
-                    PokemonRoute = edtRoute.Text,
-                    PokemonLocation = edtLocation.Text
-                };
-                db.InsertIntoTable(pokemon);
-                LoadData();
+                    Pokemon pokemon = new Pokemon()
+                    {
+
+                        Name = edtName.Text,
+                        MinLevel = int.Parse(edtMinLevel.Text.ToString()),
+                        MaxLevel = int.Parse(edtMaxLevel.Text.ToString()),
+                        EncounterRate = int.Parse(edtEncounterRate.Text.ToString()),
+                        PokemonRoute = edtRoute.Text,
+                        PokemonLocation = edtLocation.Text
+                    };
+
+                    try
+                    {
+                        db.InsertIntoTable(pokemon);
+                        LoadData();
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid Input Exception: ", ex);
+                        Toast.MakeText(this, "Incorrect Input, Try Again!", ToastLength.Short).Show();
+                    }
+
+                }
+                else
+                {
+                    return;
+                }
+
             };
+
             btnEdit.Click += delegate
             {
-                Pokemon pokemon = new Pokemon()
+                if (ValidateInput(edtName, edtMinLevel, edtMaxLevel, edtEncounterRate, edtRoute, edtLocation))
                 {
-                    ID = int.Parse(edtName.Tag.ToString()),
-                    Name = edtName.Text,
-                    MinLevel = int.Parse(edtMinLevel.Text.ToString()),
-                    MaxLevel = int.Parse(edtMaxLevel.Text.ToString()),
-                    EncounterRate = int.Parse(edtEncounterRate.Text.ToString()),
-                    PokemonRoute = edtRoute.Text,
-                    PokemonLocation = edtLocation.Text
-                };
-                db.UpdateTable(pokemon);
-                LoadData();
+                    Pokemon pokemon = new Pokemon()
+                    {
+                        ID = int.Parse(edtName.Tag.ToString()),
+                        Name = edtName.Text,
+                        MinLevel = int.Parse(edtMinLevel.Text.ToString()),
+                        MaxLevel = int.Parse(edtMaxLevel.Text.ToString()),
+                        EncounterRate = int.Parse(edtEncounterRate.Text.ToString()),
+                        PokemonRoute = edtRoute.Text,
+                        PokemonLocation = edtLocation.Text
+                    };
+                    try
+                    {
+                        db.UpdateTable(pokemon);
+                        LoadData();
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Invalid Input Exception: ", ex);
+                        Toast.MakeText(this, "Incorrect Input, Try Again!", ToastLength.Short).Show();
+                    }
+                }
+                else
+                {
+                    return;
+                }
             };
             btnRemove.Click += delegate
             {
@@ -120,11 +156,33 @@ namespace SQLiteDB.Resources.Views
 
             };
         }
-         private void LoadData()
+        private void LoadData()
         {
             listSource = db.SelectTable();
             var adapter = new SQLiteDB.Resources.Model.ListViewAdapter(this, listSource);
             listViewData.Adapter = adapter;
+        }
+        bool ValidateInput(EditText name, EditText minLevel, EditText maxLevel, EditText rate, EditText route, EditText location)
+        {
+            bool Valid = true;
+            List<EditText> input = new List<EditText>();
+            input.Add(name);
+            input.Add(minLevel);
+            input.Add(maxLevel);
+            input.Add(rate);
+            input.Add(route);
+            input.Add(location);
+
+            foreach (EditText et in input)
+            {
+                string strTemp = et.Text.ToString();
+                if (TextUtils.IsEmpty(strTemp))
+                {
+                    Valid = false;
+                    Toast.MakeText(this, "All fields must be completed ", ToastLength.Short).Show();
+                }
+            }
+            return Valid;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

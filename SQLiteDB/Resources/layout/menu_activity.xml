@@ -17,7 +17,7 @@
         android:paddingTop="150dp"
         
         android:typeface="monospace"
-        android:textColor="#ffffffff"
+        android:textColor="@android:color/darker_gray"
         android:layout_weight="0"/>
 
     <LinearLayout
@@ -38,6 +38,8 @@
             android:text="@string/campaigns_button_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:typeface="monospace"/>
         <Button
             android:id="@+id/btnCreateCampaign"
@@ -47,6 +49,8 @@
             android:text="@string/create_button_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:typeface="monospace"/>
         <Button
             android:id="@+id/btnExit"
@@ -56,6 +60,8 @@
             android:text="@string/exit_button_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:typeface="monospace"/>
     </LinearLayout>
 </LinearLayout>  

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:p4="http://xamarin.com/mono/android/designer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#ff000000">
 
     <LinearLayout
@@ -12,6 +12,7 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ff000000">
         android:id="@+id/linearLayout1">
         <TextView
             android:text="@string/calc_encounter"
@@ -21,8 +22,8 @@
             android:id="@+id/textView10"
             android:gravity="top|center"
             android:paddingBottom="50px"
-            android:paddingTop="50px"
-            android:textColor="#ffffffff" />
+            android:paddingTop="50px"   
+            android:textColor="@android:color/darker_gray" />
 
         <TextView
             android:layout_width="match_parent"
@@ -30,7 +31,7 @@
             android:layout_gravity="left"
             android:paddingBottom="25px"
             android:text="@string/select_route"
-            android:textColor="#ffffffff" />       
+            android:textColor="@android:color/darker_gray" />       
 
         <Spinner
             android:layout_width="match_parent"
@@ -40,7 +41,9 @@
             android:textAlignment="center"
             android:spinnerMode="dropdown"
             android:paddingTop="50px"
-            android:background="#ffffffff" 
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/darker_gray"
          />
         <RadioGroup
             android:minWidth="25px"
@@ -56,24 +59,24 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/radioBtnGrass"
-                android:textColor="#ffffffff"
-                android:buttonTint="#ffffffff" />
+                android:textColor="@android:color/darker_gray"
+                android:buttonTint="@android:color/darker_gray" />
             <RadioButton
                 android:text="@string/fishing_location"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/radioBtnFishing"
-                android:textColor="#ffffffff"
-                android:buttonTint="#ffffffff" />
+                android:textColor="@android:color/darker_gray"
+                android:buttonTint="@android:color/darker_gray" />
             <RadioButton
                 android:text="@string/surfing_location"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/radioBtnSurfing"
-                android:textColor="#ffffffff"
-                android:buttonTint="#ffffffff" />
+                android:textColor="@android:color/darker_gray"
+                android:buttonTint="@android:color/darker_gray" />
         </RadioGroup>
         <TextView
             android:layout_width="match_parent"
@@ -81,26 +84,30 @@
             android:layout_gravity="left"
             android:paddingBottom="25px"
             android:paddingTop="50px"
+       
             android:text="@string/num_encounters"
-            android:textColor="#ffffffff" />
+            android:textColor="@android:color/darker_gray" />
         <EditText
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/darker_gray"
             android:id="@+id/editText1"
-            android:textColor="#ffffffff"/>
+            android:textColor="@android:color/darker_gray"/>
 
         <Button
             android:text="@string/calc_encounter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:id="@+id/button1" />
         <TableLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#ffffffff"
+            android:layout_height="wrap_content"
+            android:background="#ff000000"
             android:id="@+id/tableLayout1">
         </TableLayout>
     </LinearLayout>

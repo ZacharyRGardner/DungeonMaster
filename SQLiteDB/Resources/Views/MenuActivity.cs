@@ -31,13 +31,14 @@ namespace SQLiteDB.Resources.Views
             };
             btnCreateCampaign.Click += delegate
             {
-                // This will save current state and exit the app
+                
             };
             //btnExit.Click += delegate
             //{
-            //    Application.
+            // This will save current state and exit the 
+            // application.
             //};
-            
+
         }
     }
 }

@@ -19,12 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:id="@+id/btnPokeDnD" />
         <Button
             android:text="@string/edit_poke_dungeon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:id="@+id/btnEdit" />
     </LinearLayout>
 </ScrollView>
