@@ -76,10 +76,10 @@ Dungeon Master is an Encounter Generator for Custom tabletop-RPG games.
 - [X] Error Correction for all user input.
 - [X] Basic UI implemented.
     - [ ] User customizable UI.
-- [] Campaign Tracker.
-- [] Character Tracker.
-- [] Character Builder.
-- [] Campaign-Sync for tracking all player characters within a campaign.
+- [ ] Campaign Tracker.
+- [ ] Character Tracker.
+- [ ] Character Builder.
+- [ ] Campaign-Sync for tracking all player characters within a campaign.
 
 
 See the [open issues](https://github.com/ZacharyRGardner/DungeonMaster/issues) for a full list of proposed features (and known issues).
@@ -100,7 +100,7 @@ Project Link: [https://github.com/ZacharyRGardner/DungeonMaster](https://github.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [](Thank you Eric for building the campaign that inspired this app!)
+* [X](Thank you Eric for building the campaign that inspired this app!)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
