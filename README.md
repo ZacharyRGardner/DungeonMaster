@@ -60,7 +60,8 @@ Dungeon Master is an Encounter Generator for Custom tabletop-RPG games.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+* Inquire for installation instructions and Contributions
+* Currently build for Android Mobile, with iOS and Windows Desktop Versions coming soon!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
