@@ -100,7 +100,7 @@ Project Link: [https://github.com/ZacharyRGardner/DungeonMaster](https://github.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [X](Thank you Eric for building the campaign that inspired this app!)
+* (Thank you Eric for building the campaign that inspired this app!)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
