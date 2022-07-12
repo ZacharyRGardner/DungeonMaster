@@ -14,9 +14,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<div>
-    <h1>Dungeon Master</h1>
-</div>
+
+
+<h1>Dungeon Master</h1>
+
 <!-- TABLE OF CONTENTS -->
 <details>
     <summary>Table of Contents</summary>
@@ -30,6 +31,7 @@
         <li><a href="#usage">Usage</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
     </ol>
 </details>
 
@@ -37,7 +39,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+Dungeon Master is an Encounter Generator for Custom tabletop-RPG games.
 
 
 
@@ -67,10 +69,18 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [X] SQLite Database functioning, allowing for persistent data storage.
+    - [ ] User customizable encounter/character/campaign storage.
+- [X] Encounter Generator producing unique encounters.
+    - [ ] User customizable encounter templates.
+- [X] Error Correction for all user input.
+- [X] Basic UI implemented.
+    - [ ] User customizable UI.
+- [] Campaign Tracker.
+- [] Character Tracker.
+- [] Character Builder.
+- [] Campaign-Sync for tracking all player characters within a campaign.
+
 
 See the [open issues](https://github.com/ZacharyRGardner/DungeonMaster/issues) for a full list of proposed features (and known issues).
 
@@ -85,6 +95,14 @@ Project Link: [https://github.com/ZacharyRGardner/DungeonMaster](https://github.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [](Thank you Eric for building the campaign that inspired this app!)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -102,4 +120,3 @@ Project Link: [https://github.com/ZacharyRGardner/DungeonMaster](https://github.
 [license-url]: https://github.com/ZacharyRGardner/DungeonMaster/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/zryangardner
-
