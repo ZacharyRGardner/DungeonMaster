@@ -23,7 +23,7 @@ namespace SQLiteDB.Resources.Views
 
             var btnCampaigns = FindViewById<Button>(Resource.Id.btnCampaigns);
             var btnCreateCampaign = FindViewById<Button>(Resource.Id.btnCreateCampaign);
-            var btnExit = FindViewById<Button>(Resource.Id.btnExit);
+            //var btnExit = FindViewById<Button>(Resource.Id.btnExit);
 
             btnCampaigns.Click += delegate
             {
